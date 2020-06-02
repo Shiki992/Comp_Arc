@@ -1,0 +1,44 @@
+#! /usr/bin/vvp
+:ivl_version "10.1 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55ed82c1de40 .scope module, "c17" "c17" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "N1"
+    .port_info 1 /INPUT 1 "N2"
+    .port_info 2 /INPUT 1 "N3"
+    .port_info 3 /INPUT 1 "N6"
+    .port_info 4 /INPUT 1 "N7"
+    .port_info 5 /OUTPUT 1 "N22"
+    .port_info 6 /OUTPUT 1 "N23"
+o0x7fa1fb937018 .functor BUFZ 1, C4<z>; HiZ drive
+o0x7fa1fb937198 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x55ed82c3e780 .functor NAND 1, o0x7fa1fb937018, o0x7fa1fb937198, C4<1>, C4<1>;
+o0x7fa1fb9371c8 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x55ed82c3e870 .functor NAND 1, o0x7fa1fb937198, o0x7fa1fb9371c8, C4<1>, C4<1>;
+o0x7fa1fb937108 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x55ed82c3e910 .functor NAND 1, o0x7fa1fb937108, L_0x55ed82c3e870, C4<1>, C4<1>;
+o0x7fa1fb9371f8 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x55ed82c3ea30 .functor NAND 1, L_0x55ed82c3e870, o0x7fa1fb9371f8, C4<1>, C4<1>;
+L_0x55ed82c3eb00 .functor NAND 1, L_0x55ed82c3e780, L_0x55ed82c3e910, C4<1>, C4<1>;
+L_0x55ed82c3ec40 .functor NAND 1, L_0x55ed82c3e910, L_0x55ed82c3ea30, C4<1>, C4<1>;
+v0x55ed82c1e070_0 .net "N1", 0 0, o0x7fa1fb937018;  0 drivers
+v0x55ed82c3def0_0 .net "N10", 0 0, L_0x55ed82c3e780;  1 drivers
+v0x55ed82c3dfb0_0 .net "N11", 0 0, L_0x55ed82c3e870;  1 drivers
+v0x55ed82c3e050_0 .net "N16", 0 0, L_0x55ed82c3e910;  1 drivers
+v0x55ed82c3e110_0 .net "N19", 0 0, L_0x55ed82c3ea30;  1 drivers
+v0x55ed82c3e220_0 .net "N2", 0 0, o0x7fa1fb937108;  0 drivers
+v0x55ed82c3e2e0_0 .net "N22", 0 0, L_0x55ed82c3eb00;  1 drivers
+v0x55ed82c3e3a0_0 .net "N23", 0 0, L_0x55ed82c3ec40;  1 drivers
+v0x55ed82c3e460_0 .net "N3", 0 0, o0x7fa1fb937198;  0 drivers
+v0x55ed82c3e520_0 .net "N6", 0 0, o0x7fa1fb9371c8;  0 drivers
+v0x55ed82c3e5e0_0 .net "N7", 0 0, o0x7fa1fb9371f8;  0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "c17.v";
